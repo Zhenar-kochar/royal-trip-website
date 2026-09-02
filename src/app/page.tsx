@@ -53,12 +53,16 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <div>
-            <p className="text-sm font-medium text-muted">
+            <p className="hero-fade-up text-sm font-medium text-muted">
               Iraq-based travel &amp; mobility agency
             </p>
             <h1 className="mt-4 font-serif text-4xl leading-tight text-body sm:text-5xl lg:text-6xl">
-              The world is closer with{" "}
-              <span className="text-maroon italic">Royal Trip.</span>
+              <span className="hero-fade-up-delay-1 inline-block">
+                The world is closer with
+              </span>{" "}
+              <span className="hero-fade-up-delay-2 inline-block text-maroon italic">
+                Royal Trip.
+              </span>
             </h1>
             <p className="mt-6 max-w-md text-base text-muted">
               First class service, everytime. Flights, hotels, visas, study

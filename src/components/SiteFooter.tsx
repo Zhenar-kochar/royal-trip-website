@@ -90,6 +90,8 @@ export default function SiteFooter() {
 
       <div className="border-t border-cream/15 px-6 py-6 text-center text-xs text-cream/60">
         © {new Date().getFullYear()} Royal Trip. All rights reserved.
+        <span className="mx-2 text-cream/30">·</span>
+        Built by Zhenar Kochar
       </div>
     </footer>
   );

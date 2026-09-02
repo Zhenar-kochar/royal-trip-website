@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import ServiceIcon from "@/components/ServiceIcon";
+import VisaTrackRecord, {
+  type TrackRecordStat,
+} from "@/components/VisaTrackRecord";
 
 export const metadata: Metadata = {
   title: "About & Services — Royal Trip",
@@ -16,12 +19,17 @@ const VALUES = [
   "Growth",
 ];
 
-const TRACK_RECORD_STATS = [
-  { value: "40%", label: "United Kingdom" },
-  { value: "20%", label: "Canada" },
-  { value: "55%", label: "Schengen countries" },
-  { value: "None", label: "Yearly error margin", note: "currently reported" },
-] as const;
+const TRACK_RECORD_STATS: TrackRecordStat[] = [
+  { value: 40, suffix: "%", label: "United Kingdom" },
+  { value: 20, suffix: "%", label: "Canada" },
+  { value: 55, suffix: "%", label: "Schengen countries" },
+  {
+    value: null,
+    display: "None",
+    label: "Yearly error margin",
+    note: "currently reported",
+  },
+];
 
 const SERVICES = [
   {
@@ -165,66 +173,8 @@ export default function InfoPage() {
           <h2 className="font-serif text-2xl text-body">
             Our visa track record
           </h2>
-          <p className="mt-4 text-base text-muted">
-            We process approximately 30 visa applications per month —
-            around 360 per year.
-          </p>
 
-          <dl className="mt-12">
-            <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:hidden">
-              {TRACK_RECORD_STATS.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="flex flex-col items-center gap-3 text-center"
-                >
-                  <dd className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-maroon px-2 text-center font-serif text-lg text-maroon">
-                    {stat.value}
-                  </dd>
-                  <dt className="text-sm text-body">
-                    {stat.label}
-                    {"note" in stat && (
-                      <span className="mt-0.5 block text-xs text-muted">
-                        {stat.note}
-                      </span>
-                    )}
-                  </dt>
-                </div>
-              ))}
-            </div>
-
-            <div className="hidden sm:block">
-              <div className="flex items-center">
-                {TRACK_RECORD_STATS.map((stat, i) => (
-                  <div
-                    key={stat.label}
-                    className="flex flex-1 items-center last:flex-none"
-                  >
-                    <dd className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full border-2 border-maroon px-2 text-center font-serif text-xl text-maroon">
-                      {stat.value}
-                    </dd>
-                    {i < TRACK_RECORD_STATS.length - 1 && (
-                      <span
-                        className="mx-2 h-px flex-1 border-t-2 border-dashed border-maroon/40"
-                        aria-hidden="true"
-                      />
-                    )}
-                  </div>
-                ))}
-              </div>
-              <div className="mt-4 grid grid-cols-4 gap-6 text-center">
-                {TRACK_RECORD_STATS.map((stat) => (
-                  <dt key={stat.label} className="text-sm text-body">
-                    {stat.label}
-                    {"note" in stat && (
-                      <span className="mt-0.5 block text-xs text-muted">
-                        {stat.note}
-                      </span>
-                    )}
-                  </dt>
-                ))}
-              </div>
-            </div>
-          </dl>
+          <VisaTrackRecord stats={TRACK_RECORD_STATS} monthly={30} yearly={360} />
 
           <p className="mt-8 text-sm text-muted">
             Approval rates are historical averages and vary depending on
