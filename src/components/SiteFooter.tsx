@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/basePath";
 
 const PHONES = [
   { label: "+964 773 519 9595", href: "tel:+9647735199595" },
@@ -29,7 +30,7 @@ export default function SiteFooter() {
         <div>
           <span className="inline-flex rounded-md bg-cream px-3 py-2">
             <Image
-              src="/wordmark.png"
+              src={withBasePath("/wordmark.png")}
               alt="Royal Trip"
               width={1393}
               height={509}

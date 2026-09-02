@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { withBasePath } from "@/lib/basePath";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -27,7 +28,7 @@ export default function SiteHeader() {
           onClick={() => setMenuOpen(false)}
         >
           <Image
-            src="/wordmark.png"
+            src={withBasePath("/wordmark.png")}
             alt="Royal Trip"
             width={1393}
             height={509}
