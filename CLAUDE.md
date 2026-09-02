@@ -58,10 +58,10 @@ Quality floor: responsive to mobile, visible keyboard focus, reduced motion resp
 - H1: "The world is closer with **Royal Trip.**" (brand name in italic maroon)
 - Sub: First class service, everytime. Flights, hotels, visas, study placements, and immigration support — planned by people who pick up the phone.
 - CTAs: "Start planning" → `/contact`; "or call +964 773 519 9595"
-- Trust bar: "Visas prepared for the UK, Canada, US, Ireland, New Zealand, Australia, and 14 Schengen countries."
+- Trust bar: "Visas prepared for the UK, Canada, US, Ireland, New Zealand, Australia, and Schengen countries — Greece, France, Spain, Italy, Belgium, Czech Republic, Hungary, Portugal, Sweden, Norway, Switzerland, Austria, Finland, Netherlands, and Poland."
 
-**Services (8, each links to `/contact`):**
-Flights · Hotels · Visas · Study Abroad · Immigration · Travel Groups · Medical Travel · International Investment
+**Services (11, each links to `/contact`):**
+Flights · Hotels · Visas · Study Abroad · Immigration · Travel Groups · Medical Travel · International Investment · Transfers · Insurance · Translation
 
 **How it works (4 steps):**
 1. Sulaymaniyah — Tell us where you're going. Call, message, or stop by.
@@ -76,7 +76,9 @@ Flights · Hotels · Visas · Study Abroad · Immigration · Travel Groups · Me
 
 **Values:** Customer care · Clarity · Reliability · Knowledge · Transparency · Growth
 
-**Full service descriptions** — Flights, Hotels, Visa Services, Study Abroad, Immigration & Residency, Travel Groups, Medical Travel, International Investment.
+**Full service descriptions** — Flights, Hotels, Visa Services, Study Abroad, Immigration & Residency, Travel Groups, Medical Travel, International Investment, Transfers, Insurance, Translation.
+
+**Visa track record stats (4, alongside the volume line):** United Kingdom 40% · Canada 20% · Schengen countries 55% · Yearly error margin — none currently reported.
 
 **Disclaimers block (required):** Visa approvals, admissions, and residency decisions are made solely by the relevant embassy, university, or government authority — Royal Trip prepares and submits applications but cannot guarantee outcomes. Prices are subject to confirmation at time of booking. Any approval-rate figures are historical averages, not predictions for an individual case.
 
@@ -97,7 +99,7 @@ Flights · Hotels · Visas · Study Abroad · Immigration · Travel Groups · Me
 
 Canada · United Kingdom · United States · Ireland · New Zealand · Australia · Schengen (Greece, France, Spain, Italy, Belgium, Czech Republic, Hungary, Portugal, Sweden, Norway, Switzerland, Austria, Finland, Netherlands, Poland)
 
-Do **not** publish internal approval-rate percentages on the public site.
+Approval-rate data below IS approved for public display, per owner decision.
 
 ## Deployment
 

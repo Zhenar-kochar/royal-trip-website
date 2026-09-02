@@ -1,69 +1,160 @@
-import Image from "next/image";
+import Link from "next/link";
+import PassportStamp from "@/components/PassportStamp";
+import RouteLine from "@/components/RouteLine";
+import ServiceIcon from "@/components/ServiceIcon";
+
+const SERVICES = [
+  { title: "Flights", blurb: "Domestic and international booking.", icon: "flights" },
+  { title: "Hotels", blurb: "Stays matched to your itinerary.", icon: "hotels" },
+  { title: "Visas", blurb: "Applications prepared and checked.", icon: "visas" },
+  { title: "Study Abroad", blurb: "Admissions and placement support.", icon: "study" },
+  { title: "Immigration", blurb: "Residency and relocation guidance.", icon: "immigration" },
+  { title: "Travel Groups", blurb: "Organized trips, planned together.", icon: "groups" },
+  { title: "Medical Travel", blurb: "Care abroad, coordinated end to end.", icon: "medical" },
+  {
+    title: "International Investment",
+    blurb: "Guidance for cross-border opportunities.",
+    icon: "investment",
+  },
+  { title: "Transfers", blurb: "Airport and intercity transfers, sorted.", icon: "transfers" },
+  { title: "Insurance", blurb: "Travel insurance, sourced and explained.", icon: "insurance" },
+  {
+    title: "Translation",
+    blurb: "Certified translations for visa paperwork.",
+    icon: "translation",
+  },
+] as const;
+
+const STEPS = [
+  {
+    stage: "Sulaymaniyah",
+    description: "Tell us where you're going. Call, message, or stop by.",
+  },
+  {
+    stage: "In review",
+    description:
+      "Get a verified proposal. We check routes, requirements, and pricing before anything is confirmed.",
+  },
+  {
+    stage: "Confirmed",
+    description:
+      "Lock it in with an advisor. A real person walks you through documents, costs, and dates.",
+  },
+  {
+    stage: "Destination",
+    description:
+      "Travel with support. We stay reachable before you leave and while you're away.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <section className="mx-auto max-w-6xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+        <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
+          <div>
+            <p className="text-sm font-medium text-muted">
+              Iraq-based travel &amp; mobility agency
+            </p>
+            <h1 className="mt-4 font-serif text-4xl leading-tight text-body sm:text-5xl lg:text-6xl">
+              The world is closer with{" "}
+              <span className="text-maroon italic">Royal Trip.</span>
+            </h1>
+            <p className="mt-6 max-w-md text-base text-muted">
+              First class service, everytime. Flights, hotels, visas, study
+              placements, and immigration support — planned by people who
+              pick up the phone.
+            </p>
+
+            <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+              <Link
+                href="/contact"
+                className="rounded-full bg-maroon px-6 py-3 text-sm font-medium text-cream transition-all duration-200 hover:-translate-y-0.5 hover:bg-maroon-deep hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-maroon"
+              >
+                Contact us
+              </Link>
+              <a
+                href="tel:+9647735199595"
+                className="link-underline text-sm text-muted hover:text-maroon focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-maroon"
+              >
+                or call +964 773 519 9595
+              </a>
+            </div>
+
+            <p className="mt-10 border-t border-border pt-6 text-sm text-muted">
+              Visas prepared for the UK, Canada, US, Ireland, New Zealand,
+              Australia, and Schengen countries — Greece, France, Spain,
+              Italy, Belgium, Czech Republic, Hungary, Portugal, Sweden,
+              Norway, Switzerland, Austria, Finland, Netherlands, and Poland.
+            </p>
+          </div>
+
+          <div className="flex justify-center md:justify-end">
+            <PassportStamp className="aspect-square w-72 max-w-full sm:w-80 md:w-96 lg:w-[26rem]" />
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="border-t border-border bg-white">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <h2 className="font-serif text-3xl text-body">
+            Where we can help
+          </h2>
+          <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+            {SERVICES.map((service, i) => (
+              <Link
+                key={service.title}
+                href="/contact"
+                className={`group relative flex flex-col justify-between gap-8 bg-white p-8 transition-all duration-200 hover:z-10 hover:-translate-y-0.5 hover:bg-maroon-tint hover:shadow-md focus-visible:relative focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-maroon ${
+                  i === SERVICES.length - 1 ? "sm:col-span-2 lg:col-span-2" : ""
+                }`}
+              >
+                <ServiceIcon
+                  name={service.icon}
+                  className="h-9 w-9 text-maroon transition-transform duration-200 group-hover:scale-110"
+                />
+                <div>
+                  <h3 className="font-serif text-lg text-body group-hover:text-maroon">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-muted">{service.blurb}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="border-t border-border bg-maroon-tint">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <h2 className="font-serif text-3xl text-body">How it works</h2>
+          <div className="mt-12">
+            <RouteLine steps={STEPS} />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border bg-maroon-deep">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-6 py-16 sm:flex-row sm:items-center">
+          <h2 className="max-w-md font-serif text-2xl text-cream sm:text-3xl">
+            Ready to start planning your trip?
+          </h2>
+          <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+            <Link
+              href="/contact"
+              className="rounded-full bg-cream px-6 py-3 text-sm font-medium text-maroon-deep transition-all duration-200 hover:-translate-y-0.5 hover:bg-white hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
+            >
+              Start planning
+            </Link>
+            <a
+              href="tel:+9647735199595"
+              className="link-underline text-sm text-cream/80 hover:text-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
+            >
+              or call +964 773 519 9595
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
